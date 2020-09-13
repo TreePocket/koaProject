@@ -1,5 +1,5 @@
 {
-  "name": "yii-node",
+  "name": "koaProject",
   "version": "1.0.0",
   "description": "<p align=\"center\">     <a href=\"https://github.com/yiisoft\" target=\"_blank\">         <img src=\"https://avatars0.githubusercontent.com/u/993323\" height=\"100px\">     </a>     <h1 align=\"center\">Yii 2 Basic Project Template</h1>     <br> </p>",
   "main": "index.js",
@@ -27,5 +27,13 @@
   "devDependencies": {
     "@babel/preset-env": "^7.11.5",
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1037175020/koaProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/1037175020/koaProject/issues"
+  },
+  "homepage": "https://github.com/1037175020/koaProject#readme"
 }
