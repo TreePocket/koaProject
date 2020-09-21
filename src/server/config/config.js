@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-06 14:51:46
- * @LastEditTime: 2020-09-13 12:03:22
+ * @LastEditTime: 2020-09-16 20:30:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /yii-node/config/config.js
@@ -9,8 +9,8 @@
 import path from 'path';
 
 let config = {
-  viewsDir: path.join(__dirname, "../", "views"),
-  staticDir: path.join(__dirname, "../", "assets")
+  viewsDir: path.join(__dirname, "../../web", "views"),
+  staticDir: path.join(__dirname, "../../web", "assets")
 };
 
 //本地环境

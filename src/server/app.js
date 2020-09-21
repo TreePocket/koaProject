@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-06 14:46:47
- * @LastEditTime: 2020-09-13 21:33:14
+ * @LastEditTime: 2020-09-16 20:32:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /yii-node/app.js
@@ -27,7 +27,6 @@ log4js.configure({
 
 const logger = log4js.getLogger("cheese");
 logger.error("Cheese is too ripe!");
-
 
 
 const app = new Koa();

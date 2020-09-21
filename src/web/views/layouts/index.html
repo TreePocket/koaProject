@@ -1,0 +1,23 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-19 23:14:37
+ * @LastEditTime: 2020-09-20 22:49:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /koaProject/src/web/views/layouts/index.html
+-->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock  %}</title>
+  {% block head %}{% endblock  %}
+</head>
+
+<body>
+  {% include '../../components/banner/banner.html'%}
+  {% block content %}{% endblock  %}
+  {% block scripts %}{% endblock  %}
+</body>
+
+</html>

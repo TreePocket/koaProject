@@ -1,0 +1,25 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-09-13 20:07:53
+ * @LastEditTime: 2020-09-21 22:01:52
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /yii-node/views/books/list.html
+-->
+{% extends '../../layouts/index.html' %}
+
+{% block title %} 图书列表 {% endblock %}
+{% block head %}
+<!-- injectcss -->
+{% endblock %}
+{% block content %}
+<ul>
+  {% for item in data -%}
+  <li>[[item.id]] - [[item.name]]</li>
+  {%- endfor %}
+</ul>
+{% endblock %}
+
+{% block scripts %}
+<!-- injectjs -->
+{% endblock %}

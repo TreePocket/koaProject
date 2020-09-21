@@ -7,8 +7,17 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=development nodemon --exec 'babel-node ./app.js'"
+    "preclient:dev": "rm -rf ./dist",
+    "client:dev": "scripty",
+    "client:prod": "scripty",
+    "server:dev": "scripty",
+    "server:start": "scripty",
+    "server:prod": "scripty",
+    "test": "mocha --file ./tests/api.spec.js",
+    "start": "NODE_ENV=development nodemon --exec 'babel-node ./src/server/app.js'",
+    "start-test": "NODE_ENV=development nodemon ./dist/server/app.js'",
+    "start:test": "NODE_ENV=development nodemon --exec 'babel-node ./dist/server/app.js'",
+    "jscpd": "jscpd './demos/test.js'"
   },
   "keywords": [],
   "author": "",
@@ -25,8 +34,26 @@
     "log4js": "^6.3.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@babel/preset-env": "^7.11.5",
-    "nodemon": "^2.0.4"
+    "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
+    "copy-webpack-plugin": "^6.1.1",
+    "css-loader": "^4.3.0",
+    "glob": "^7.1.6",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "html-webpack-plugin": "^4.4.1",
+    "jscpd": "^3.3.19",
+    "mini-css-extract-plugin": "^0.11.2",
+    "mocha": "^8.1.3",
+    "nodemon": "^2.0.4",
+    "scripty": "^2.0.0",
+    "supertest": "^4.0.2",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.1.4",
+    "yargs": "^16.0.3"
   },
   "repository": {
     "type": "git",
