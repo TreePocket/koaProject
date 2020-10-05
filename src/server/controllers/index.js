@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-06 15:04:28
- * @LastEditTime: 2020-09-13 20:13:17
+ * @LastEditTime: 2020-10-05 15:46:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /yii-node/controllers/index.js
@@ -22,6 +22,7 @@ function initController(app) {
   router.get('/', indexController.actionIndex);
   router.get('/api', apiController.actionDataList);
   router.get('/books/list', booksController.actionBookListPage);
+  router.get('/books/create', booksController.actionBookCreatePage);
 
   app.use(router.routes()).use(router.allowedMethods());
 }

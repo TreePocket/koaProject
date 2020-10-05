@@ -1,31 +1,72 @@
 <!--
  * @Author: your name
  * @Date: 2020-09-06 16:01:20
- * @LastEditTime: 2020-09-06 16:02:27
+ * @LastEditTime: 2020-10-05 15:08:55
  * @LastEditors: your name
  * @Description: In User Settings Edit
- * @FilePath: /yii-node/views/index.html
+ * @FilePath: /koaProject/src/web/views/index.html
 -->
-<!DOCTYPE html>
-<html lang=en>
+{% extends './layouts/index.html' %}
 
-<head>
-  <meta charset=utf-8>
-  <meta http-equiv=X-UA-Compatible content="IE=edge">
-  <meta name=viewport content="width=device-width,initial-scale=1">
-  <link rel=icon href=/favicon.ico>
-  <title>test</title>
-  <link href=/css/app.fb0c6e1c.css rel=preload as=style>
-  <link href=/js/app.fae3a438.js rel=preload as=script>
-  <link href=/js/chunk-vendors.468a5298.js rel=preload as=script>
-  <link href=/css/app.fb0c6e1c.css rel=stylesheet>
-</head>
+{% block title %}首页 Vue 测试{% endblock %}
 
-<body><noscript><strong>We're sorry but test doesn't work properly without JavaScript enabled. Please enable it to
-      continue.</strong></noscript>
-  <div id=app></div>
-  <script src=/js/chunk-vendors.468a5298.js></script>
-  <script src=/js/app.fae3a438.js></script>
-</body>
+{% block head %}{% endblock %}
 
-</html>
+{% block content %}
+后端的数据：[[message]] 域名不同、端口不同、协议不同 跨域的解决方案： - cors
+让后端支持跨域 - nodejs 服务，后端请求是不存在跨域的 - nginx -
+二级域名的话，可以设置 document.domain 改成一级同域名 - webSocket
+在传输层请求，避免跨域 - postMessage 设置允许跨域
+
+<div id="app">
+  <input type="text" v-model="message" />
+  <div>{{ message }}</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="/js/index.js"></script>
+
+<!-- 如果兼容 module -->
+<script type="module">
+  import("/js/data.js").then((response) => {
+    console.log("response:", response);
+  });
+</script>
+
+<!-- nomodule 不支持 -->
+<script>
+  (function () {
+    var check = document.createElement("script");
+    if (!("noModule" in check) && "onbeforeload" in check) {
+      var support = false;
+      document.addEventListener(
+        "beforeload",
+        function (e) {
+          if (e.target === check) {
+            support = true;
+          } else if (!e.target.hasAttribute("nomodule") || !support) {
+            return;
+          }
+          e.preventDefault();
+        },
+        true
+      );
+
+      check.type = "module";
+      check.src = ".";
+      document.head.appendChild(check);
+      check.remove();
+    }
+  })();
+</script>
+
+<!-- 如果不兼容 -->
+<script nomodule src="https://cdn.staticfile.org/systemjs/6.5.1/system.js"></script>
+<script nomodule>
+  System.import("/js/data_bundle.js").then((response) => {
+    console.log("response:", response);
+  });
+</script>
+{% endblock %}

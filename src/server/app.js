@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-09-06 14:46:47
- * @LastEditTime: 2020-09-16 20:32:31
+ * @LastEditTime: 2020-09-28 21:24:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /yii-node/app.js
@@ -50,5 +50,5 @@ app.use(historyApiFallback('/', { whiteList: ['/api', '/books'] }));
 errorHander.error(app, logger);
 
 app.listen(config.port, () => {
-  console.log(`server is running at port ${config.port}`);
+  console.log(`server2222  is running at port ${config.port}`);
 })
